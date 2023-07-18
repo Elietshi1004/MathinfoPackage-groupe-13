@@ -1,0 +1,7 @@
+Package:mathinfopackage13
+Version:1.0.0
+Section:base
+Priority:optional
+Architecture:all
+Depends:bash
+Files:/usr/bin/mathinfopackage13

@@ -1,0 +1,93 @@
+#!/bin/bash
+
+#On active avec cette commande le mode arret immediat, ce qui signifie que le code va s'arreter si il y a erreur 
+#set -e
+
+#On place la liste des logiciels disponibles dans une liste
+logiciels=(
+  "firefox"
+  "ubuntu"
+  "freenas"
+  "libreoffice"
+  "codeblocks"
+  "git"
+  "python3"
+  "netcat"
+  "vscode"
+  "vim"
+  "wireshark"
+  "nodejs"
+  "firestarter"
+)
+
+#Cette fonction permet de télécharger le vscode et l'installer
+installVSCode(){
+  wget -O code.deb https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+  sudo apt install code.deb
+}
+
+downloadFreeNas(){
+  echo "Téléchargement de FreeNas..."
+  wget -O truenas13.iso https://download.freenas.org/13.0/STABLE/U5.2/x64/TrueNAS-13.0-U5.2.iso?__hstc=123088916.3d118359446be6802b714824499a8ff7.1689681897508.1689681897508.1689681897508.1&__hssc=123088916.1.1689681897511&__hsfp=892673751
+  echo "Le TrueNas est correctement téléchargé"
+}
+
+downloadUbuntu(){
+  echo "Téléchargement de Ubuntu..."
+  VERSION="21.04"
+  ARCHITECTURE="amd64"
+  URL="http://releases.ubuntu.com/${VERSION}/ubuntu-${VERSION}-desktop-${ARCHITECTURE}.iso"
+  DESTINATION="$HOME/Downloads/"
+  wget -O ubuntu.iso "$URL"
+  echo "Ubuntu est correctement téléchargé."
+}
+
+echo "BIENVENU DANS LE PACKAGE MATH INFO GROUPE 13"
+echo ""
+echo "Trouvez ici une liste des logiciels utiles à installer"
+echo ""
+read -p "Voulez-vous mettre les composants apt à jour pour s'assurer de ne manquer de rien pour une installation d'un logiciel?(y/n) " cmaj
+if [[ $cmaj == "y" ]]; then
+sudo apt update
+echo "FIN MISE A JOUR"
+fi
+echo ""
+echo "Voici la liste des logiciels disponibles:"
+for app in "${logiciels[@]}"; do
+  echo "  $app"
+done
+echo ""
+read -p "Voulez-vous télécharger tous les logiciels (t) ou seulement certains d'entre eux (s) ? : " choice
+
+
+if [[ $choice == "t" ]]; then
+  for app in "${logiciels[@]}"; do
+    if [[ $app = "vscode" ]]; then
+      installVSCode
+    elif [[ $app = "ubuntu" ]]; then
+      downloadUbuntu
+    elif [[ $app = "freenas" ]]; then
+      downloadFreeNas
+    else
+    echo "Installation de $app ..."
+      sudo apt --fix-broken install $app
+    fi
+  done
+else 
+    read -p "Entrez les noms des logiciels que vous souhaitez télécharger, séparés par des espaces : " software
+    # On installe ici les logiciels que il a selectionné
+    for app in $software; do
+      if [[ $app = "vscode" ]]; then
+        installVSCode
+      elif [[ $app = "ubuntu" ]]; then
+        downloadUbuntu
+      elif [[ $app = "freenas" ]]; then
+        downloadFreeNas
+      else
+      	echo "Installation de $app ..."
+        sudo apt --fix-broken install $app
+      fi
+    done
+fi
+echo "Fin de l'opération."
+exit 0

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+echo "L'INSTALLATION DU PACKAGE EST MAINTENANT TERMINE"
+echo "Lancez le en tapant mathinfopackage13"
+
+exit 0

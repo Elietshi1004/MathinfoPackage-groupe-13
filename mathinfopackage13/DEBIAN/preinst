@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+echo "L'INSTALLATION EST EN COURS, VEUILLEZ PATIENTER"
+
+exit 0
