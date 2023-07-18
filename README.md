@@ -22,29 +22,29 @@ Après l'installation, vous pouvez lancer le package en utilisant la commande su
    ::: mathinfopackage13
 
 Les logiciels que vous pourrez télécharger sont :
-  "firefox"
-  "ubuntu"
-  "freenas"
-  "libreoffice"
-  "codeblocks"
-  "git"
-  "python3"
-  "netcat"
-  "vscode"
-  "vim"
-  "wireshark"
-  "nodejs"
-  "firestarter"
+  - "firefox"
+  - "ubuntu"
+  - "freenas"
+  - "libreoffice"
+  - "codeblocks"
+  - "git"
+  - "python3"
+  - "netcat"
+  - "vscode"
+  - "vim"
+  - "wireshark"
+  - "nodejs"
+  - "firestarter"
   
 # A propos de l'equipe:
 
-TSHINGOMBE MULUBAY ELIE
-KAKA NZUKI MEDI
-BAMBI NZUZI GIFT
-NSUKA MASIETA ABBA
-GIMENA NGUNGU ELDAD
-DIANGINDULA LUKOMBO JODIANE
-KOPI LOPANDJOLA AUGUSTIN
-BOLEY NGOY JASON
-ASAKUA MAFUTA GEDEON
-NZEKAMA IKONGOMWA ERIC 
+- TSHINGOMBE MULUBAY ELIE
+- KAKA NZUKI MEDI
+- BAMBI NZUZI GIFT
+- NSUKA MASIETA ABBA
+- GIMENA NGUNGU ELDAD
+- DIANGINDULA LUKOMBO JODIANE
+- KOPI LOPANDJOLA AUGUSTIN
+- BOLEY NGOY JASON
+- ASAKUA MAFUTA GEDEON
+- NZEKAMA IKONGOMWA ERIC 
